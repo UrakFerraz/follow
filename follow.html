@@ -1,0 +1,1506 @@
+<!doctype html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>Sample document</title>
+    <link rel="canonical" href="./regular-html-version.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+
+    <style amp-custom>
+      header{width:100vw;height:100px;position:relative;display:block;box-sizing:border-box;background-color:#efefef}
+      .followFullContainer{font-family:'Roboto Condensed',sans-serif;position:relative;display:grid;grid-template-columns:repeat(5,1fr);box-sizing:border-box;width:100vw;height:600px;grid-column-gap:20px;padding:20px;max-width:1000px;margin:0 auto;color:#26547c;box-sizing:border-box}
+      .followBlockWrapper{position:relative;display:flex;flex-direction:row;box-shadow:0 0 20px 0 rgba(0,0,0,.2);border-radius:10px}
+      .scrollbarDadosPessoais{float:left;height:549px;width:98%;background:#fff;overflow-y:scroll;position:relative;z-index:1;margin:5px 0 0}
+      .force-overflowDadosPessoais{min-height:100px;line-height:1.5;font-size:12px}
+      #style-3-scrollbarDadosPessoais::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+      #style-3-scrollbarDadosPessoais::-webkit-scrollbar{width:6px;background-color:#fff}
+      #style-3-scrollbarDadosPessoais::-webkit-scrollbar-thumb{background-color:silver}
+      .statusBlockHeaderWrapper{position:relative;display:flex;flex-direction:row;align-items:center;box-sizing:border-box;background-color:#e5efee;margin:0 4px 5px 5px;padding:5px;border-radius:7px;font-weight:600}
+      .statusBlockHeaderWrapper span{font-size:16px;margin-left:5px}
+      .classificaBtn{border:none;background-color:transparent;display:block;cursor:pointer;position:absolute;right:0;bottom:6px}
+      .followContactWrapper{display:grid;grid-template-columns:40px 1fr;grid-template-rows:auto auto auto;position:relative;box-sizing:border-box;margin:10px;padding:5px;box-shadow:0 0 20px 0 rgba(0,0,0,.2);border-radius:9px;cursor:grab;transition:.3s ease all;max-width:146px}
+      .followContactWrapper:hover{background-color:#eee2df;box-shadow:0 0 20px 0 rgba(0,0,0,.05)}
+      .followContactWrapper amp-img{grid-column:1 / 2;grid-row:1 / 2;border-radius:50%;width:35px;height:35px;border:thin solid #eee2df}
+      .followContactDataName{font-weight:600}
+      .followContactDataWrapper{display:flex;flex-direction:column;grid-column:2 / 3;grid-row:1 / 4}
+      .followContactDataWrapper span{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width:98px}
+      .followContactBtnsWrapper{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;grid-column:1 / 2;grid-row:2 / 3}
+      .followContactBtnsWrapper button{border:none;background-color:transparent;margin:4px 2px 0;padding:0;cursor:pointer;outline:none}
+      .statusBlock2HeaderWrapper{background-color:#9bd1f2}
+      .statusBlock3HeaderWrapper{background-color:#fd7400}
+      .classificaBtn1{border:none;background-color:transparent;display:block;cursor:pointer;position:absolute;right:0;bottom:6px}
+      .statusBlock4HeaderWrapper{background-color:#f95b4d}
+      .statusBlock5HeaderWrapper{background-color:#7ac943}
+      .followModalContainer{box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;position:absolute;width:100%;z-index:100;left:50%;top:50%;transform:translate(-50%,-50%)}
+      .clientNameTag{position:absolute;display:block;left:140px;top:-40px;padding:10px 15px 30px 10px;background-color:#26547c;border-radius:5px 15px 0 0;box-shadow:0 0 20px 0 rgba(0,0,0,.2);font-weight:500;font-size:18px;box-sizing:border-box;color:#fff}
+      .followExpressModalWrapper{position:relative;display:flex;flex-direction:column;align-items:center;width:750px;background-color:#fff;box-shadow:0 0 130px 0 rgba(0,0,0,.5);border-radius:10px;left:50%;transform:translateX(-50%);padding:40px;box-sizing:border-box}
+      .followExpressHeaderWrapper{display:flex;flex-direction:row;align-items:center;position:relative;width:100%;justify-content:space-between}
+      .followExpressHeaderWrapper span{font-size:25px;font-weight:200}
+      .input-cliente{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:flex-end;align-items:center}
+      .icone-input-cliente svg{height:27px;padding-right:10px}
+      .ampstart-input{background-color:#fff}
+      .cliente-dropdown{background-color:#fff;padding:10px 40px 10px 7px;border-radius:5px;border:none;box-shadow:0 0 30px 0 rgba(0,0,0,0.10);outline:none;font-family:'Roboto Condensed',sans-serif;font-size:14px;color:#26547c}
+      .cliente-dropdown select option{text-align:left;font-family:'Roboto Condensed',sans-serif}
+      .input-projeto{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:flex-end;align-items:center;margin-right:60px}
+      .icone-input-projeto svg{height:27px;padding-right:10px}
+      .ampstart-input{background-color:#fff}
+      .projeto-dropdown{background-color:#fff;padding:10px 10px 10px 7px;border-radius:5px;border:none;box-shadow:0 0 30px 0 rgba(0,0,0,0.10);outline:none;font-family:'Roboto Condensed',sans-serif;font-size:14px;color:#26547c}
+      .projeto-dropdown select option{text-align:left;font-family:'Roboto Condensed',sans-serif}
+      #myDIV{position:absolute;background-color:#fff;grid-row:2 / 3;grid-column:2/ 3;z-index:1;width:150px;height:170px;box-shadow:0 0 20px 0 rgba(0,0,0,0.15);display:flex;justify-content:center;align-items:center;right:15px;top:38px}
+      .followFormWrapper{display:flex;flex-direction:column;margin-top:20px;box-sizing:border-box;justify-content:stretch;align-items:stretch;width:100%;font-family:'Roboto Condensed',sans-serif}
+      .followFormWrapper input,.nomeProjetoInput{border:thin solid #eee2df;border-radius:5px;padding:5px;outline:none;font-family:'Roboto Condensed',sans-serif;position:relative;display:block;font-size:14px}
+      .followFormWrapper textarea{resize:none;margin-top:20px;border:thin solid #eee2df;border-radius:5px;padding:5px;outline:none;font-family:'Roboto Condensed',sans-serif;position:relative;display:block;font-size:14px}
+      .followProjetoWrapper{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;box-sizing:border-box;margin-top:20px;width:100%}
+      .nomeProjetoText{text-align:right;margin-right:8px}
+      #close-btn1{border:none;position:absolute;z-index:100;background-color:transparent;padding:0;margin:0;right:10px;top:10px;outline:none;cursor:pointer}
+      .LineTerm{z-index:15;background-color:#fff;position:relative;grid-column:2 / 3;grid-row:2 / 3;display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:center;justify-self:center;width:170px;box-shadow:0 0 20px 0 rgba(0,0,0,0.15);height:30px;border-radius:5px;font-size:12px;padding:5px}
+      #icon-data{width:20px;margin-left:5px}
+      #termDropDownIcon{width:10px;height:10px}
+      .lineTermDropDown{border:none;background-color:transparent;z-index:100;outline:none;cursor:pointer}
+      fieldset{position:relative;border:none}
+      #start,#end{font-family:'Roboto Condensed',sans-serif;border:none;background:#eee2df;padding:2px}
+      .date-picker{position:relative;margin-bottom:8px;display:flex}
+      .datas-header{display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:center;align-items:center}
+      #date-picker-icon{width:18px;margin:11px 3px 3px 0}
+      .datas-header h3{position:relative;top:3px;font-weight:400}
+      .lineTermDroDown{border:none;border-radius:7px;background:#fff}
+      .Color1{color:#8e9aaf;position:relative;left:-9px}
+      .criar-btn{width:100px;border-radius:5px;margin-top:40px;padding:10px;border:none;outline:none;font-size:14px;color:#fff;background-color:#26547c;box-sizing:border-box;cursor:pointer;transition:.3s ease all;font-family:'Roboto',sans-serif;font-size:18px;font-weight:300}
+      .criar-btn:hover{background-color:#1f8a70}
+    </style>
+
+
+<!--     <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Article headline",
+      "image": [
+        "thumbnail1.jpg"
+      ],
+      "datePublished": "2015-02-05T08:00:00+08:00"
+    }
+    </script> -->
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+
+  </head>
+
+
+
+
+  <body>
+
+<header></header>
+
+<!-- follow ful container ######################################-->
+<div class="followFullContainer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- blocos de status do follow BLOCO 1 NOMES #####################################################################################-->
+  <div class="followBlockWrapper">
+    <div class="scrollbarDadosPessoais" id="style-3-scrollbarDadosPessoais">
+      <div class="force-overflowDadosPessoais">
+
+
+
+
+
+
+
+
+        <div class="statusBlockHeaderWrapper statusBlock1HeaderWrapper">
+          <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 576 448" width="30" height="30">
+            <path d="M360,288h112c4.4,0,8-3.6,8-8v-16c0-4.4-3.6-8-8-8H360c-4.4,0-8,3.6-8,8v16C352,284.4,355.6,288,360,288z M360,224h112c4.4,0,8-3.6,8-8v-16c0-4.4-3.6-8-8-8H360c-4.4,0-8,3.6-8,8v16C352,220.4,355.6,224,360,224z M360,352h112c4.4,0,8-3.6,8-8v-16c0-4.4-3.6-8-8-8H360c-4.4,0-8,3.6-8,8v16C352,348.4,355.6,352,360,352z M192,320c44.2,0,80-35.8,80-80s-35.8-80-80-80s-80,35.8-80,80S147.8,320,192,320z M192,192c26.5,0,48,21.5,48,48s-21.5,48-48,48s-48-21.5-48-48S165.5,192,192,192z M512,0H64C28.7,0,0,28.7,0,64v320c0,35.3,28.7,64,64,64h448c35.3,0,64-28.7,64-64V64C576,28.7,547.3,0,512,0z M272,416H112v-15.1c0-7,2.1-13.8,6-19.6c5.6-8.3,15.8-13.2,27.3-13.2c12.4,0,20.8,7,46.8,7c25.9,0,34.3-7,46.8-7c11.5,0,21.7,5,27.3,13.2c3.9,5.8,6,12.6,6,19.6V416H272z M544,384c0,17.6-14.4,32-32,32H304v-15.1c0-13.9-4.2-26.8-11.4-37.5c-12.1-17.9-32.7-27.4-53.8-27.4c-19.5,0-24.4,7-46.8,7s-27.3-7-46.8-7c-21.2,0-41.8,9.4-53.8,27.4C84.2,374.1,80,387,80,400.9V416H64c-17.6,0-32-14.4-32-32V128h512V384z M544,96H32V64c0-17.6,14.4-32,32-32h448c17.6,0,32,14.4,32,32V96z"/>
+          </svg>
+          <span>Nomes</span>
+          <button class="classificaBtn">
+            <svg class="sortSvg" fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+              <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"></path>
+            </svg>
+          </button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg1.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg2.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg3.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg4.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg5.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg6.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg7.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg8.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  <!-- FINAL blocos de status do follow BLOCO 1 NOMES ####################################################################################-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- blocos de status do follow BLOCO 2 REFAZER #############################################################################-->
+  <div class="followBlockWrapper">
+    <div class="scrollbarDadosPessoais" id="style-3-scrollbarDadosPessoais">
+      <div class="force-overflowDadosPessoais">
+
+
+
+
+
+
+
+
+        <div class="statusBlockHeaderWrapper statusBlock2HeaderWrapper">
+          <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="30" height="30">
+            <path d="M512 256c0 88.225-71.775 160-160 160H110.628l68.201 68.201c4.686 4.686 4.686 12.284 0 16.971l-5.656 5.656c-4.686 4.686-12.284 4.686-16.971 0l-98.343-98.343c-4.686-4.686-4.686-12.284 0-16.971l98.343-98.343c4.686-4.686 12.284-4.686 16.971 0l5.656 5.656c4.686 4.686 4.686 12.284 0 16.971L110.628 384H352c70.579 0 128-57.421 128-128 0-28.555-9.403-54.952-25.271-76.268-3.567-4.792-3.118-11.462 1.106-15.686l5.705-5.705c5.16-5.16 13.678-4.547 18.083 1.271C499.935 186.438 512 219.835 512 256zM57.271 332.268C41.403 310.952 32 284.555 32 256c0-70.579 57.421-128 128-128h241.372l-68.201 68.201c-4.686 4.686-4.686 12.284 0 16.971l5.656 5.656c4.686 4.686 12.284 4.686 16.971 0l98.343-98.343c4.686-4.686 4.686-12.284 0-16.971L355.799 5.172c-4.686-4.686-12.284-4.686-16.971 0l-5.656 5.656c-4.686 4.686-4.686 12.284 0 16.971L401.372 96H160C71.775 96 0 167.775 0 256c0 36.165 12.065 69.562 32.376 96.387 4.405 5.818 12.923 6.432 18.083 1.271l5.705-5.705c4.225-4.224 4.674-10.893 1.107-15.685z"/>
+          </svg>
+          <span>Refazer</span>
+          <button class="classificaBtn">
+            <svg class="sortSvg" fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+              <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"></path>
+            </svg>
+          </button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg9.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg10.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg11.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg12.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg13.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  <!-- FINAL blocos de status do follow BLOCO 2 REFAZER ##################################################################################-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- blocos de status do follow BLOCO 3 não atendeu #############################################################################-->
+  <div class="followBlockWrapper">
+    <div class="scrollbarDadosPessoais" id="style-3-scrollbarDadosPessoais">
+      <div class="force-overflowDadosPessoais">
+
+
+
+
+
+
+
+
+        <div class="statusBlockHeaderWrapper statusBlock3HeaderWrapper">
+          <svg fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="30" height="30">
+            <path d="M329.5 177.8l-11.3-11.3c-1.6-1.6-3.6-2.3-5.7-2.3s-4.1.8-5.7 2.3L256 217.4l-50.9-50.9c-1.6-1.6-3.6-2.3-5.7-2.3s-4.1.8-5.7 2.3l-11.3 11.3c-3.1 3.1-3.1 8.2 0 11.3l50.9 50.9-50.9 50.9c-3.1 3.1-3.1 8.2 0 11.3l11.3 11.3c1.6 1.6 3.6 2.3 5.7 2.3s4.1-.8 5.7-2.3l50.9-50.9 50.9 50.9c1.6 1.6 3.6 2.3 5.7 2.3s4.1-.8 5.7-2.3l11.3-11.3c3.1-3.1 3.1-8.2 0-11.3l-51-50.9 50.9-50.9c3.2-3.1 3.2-8.2 0-11.3zM256 32C114.6 32 0 125.1 0 240c0 47.6 19.9 91.2 52.9 126.3C38 405.7 7 439.1 6.5 439.5c-6.6 7-8.4 17.2-4.6 26S14.4 480 24 480c61.5 0 110-25.7 139.1-46.3C192 442.8 223.2 448 256 448c141.4 0 256-93.1 256-208S397.4 32 256 32zm0 384c-28.3 0-56.3-4.3-83.2-12.8l-15.2-4.8-13 9.2c-23 16.3-58.5 35.3-102.6 39.6 12-15.1 29.8-40.4 40.8-69.6l7.1-18.7-13.7-14.6C47.3 313.7 32 277.6 32 240c0-97 100.5-176 224-176s224 79 224 176-100.5 176-224 176z"/>
+          </svg>
+          <span>Não atendeu</span>
+          <button class="classificaBtn1">
+            <svg class="sortSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+              <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"></path>
+            </svg>
+          </button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg14.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg15.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg16.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg17.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  <!-- FINAL blocos de status do follow BLOCO 3 Não atendeu ##################################################################################-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- blocos de status do follow BLOCO 4 negativo #############################################################################-->
+  <div class="followBlockWrapper">
+    <div class="scrollbarDadosPessoais" id="style-3-scrollbarDadosPessoais">
+      <div class="force-overflowDadosPessoais">
+
+
+
+
+
+
+
+
+        <div class="statusBlockHeaderWrapper statusBlock4HeaderWrapper">
+          <svg fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="30" height="30">
+            <path d="M637 485.2L23 1.8C19.6-1 14.5-.4 11.8 3l-10 12.5C-1 19-.4 24 3 26.8l614 483.5c3.4 2.8 8.5 2.2 11.2-1.2l10-12.5c2.8-3.6 2.2-8.6-1.2-11.4zM320 32c52.9 0 96 43.1 96 96 0 35.9-20 66.9-49.3 83.3l26.8 21.1C426.4 209.3 448 171.2 448 128 448 57.3 390.7 0 320 0c-54 0-100 33.6-118.8 81l26.8 21.1C239.4 61.8 276.1 32 320 32zm176 448H144c-8.8 0-16-7.2-16-16v-41.6c0-56.5 45.9-102.4 102.4-102.4 6.1 0 13 1.4 21.7 4.4 21.3 7.4 43.4 11.1 65.8 11.4l-51.6-40.6c-17.5-5.7-26.8-7.2-35.9-7.2C156.2 288 96 348.2 96 422.4V464c0 26.5 21.5 48 48 48h352c11.9 0 22.6-4.5 30.9-11.6l-27-21.2c-1.2.3-2.5.8-3.9.8z"/>
+          </svg>
+          <span>Negativo</span>
+          <button class="classificaBtn1">
+            <svg class="sortSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+              <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"></path>
+            </svg>
+          </button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg18.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg19.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg20.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg21.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg22.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+  <!-- FINAL blocos de status do follow BLOCO 4 negativo ##################################################################################-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- blocos de status do follow BLOCO 5 positivo #############################################################################-->
+  <div class="followBlockWrapper">
+    <div class="scrollbarDadosPessoais" id="style-3-scrollbarDadosPessoais">
+      <div class="force-overflowDadosPessoais">
+
+
+
+
+
+
+
+
+        <div class="statusBlockHeaderWrapper statusBlock5HeaderWrapper">
+          <svg fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="30" height="30">
+            <path d="M637.7 144.6l-14.1-14.2c-3.1-3.1-8.2-3.2-11.3 0L497.1 242.1l-53.3-53.4c-3.1-3.1-8.2-3.1-11.3 0l-14.2 14.1c-3.1 3.1-3.1 8.2 0 11.3l70.2 70.4c4.7 4.7 12.3 4.7 17 0l132.1-128.6c3.2-3.1 3.2-8.2.1-11.3zM313.6 288c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4zM416 464c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16v-41.6C32 365.9 77.9 320 134.4 320c19.6 0 39.1 16 89.6 16 50.4 0 70-16 89.6-16 56.5 0 102.4 45.9 102.4 102.4V464zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm0-224c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"/>
+          </svg>
+          <span>Positivo</span>
+          <button class="classificaBtn1">
+            <svg class="sortSvg" fill="#eee2df" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+              <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"></path>
+            </svg>
+          </button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg23.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg24.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg25.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg26.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg27.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg28.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="followContactWrapper" draggable="true">
+          <amp-img src="img/contatoImg30.jpg" width="200" height="200" layout="responsive" alt="AMP"></amp-img>
+          <div class="followContactDataWrapper">
+            <span class="followContactDataName">Nome Completo</span>
+            <span class="followContactDataText">Texto Linha 1</span>
+            <span class="followContactDataText">Texto Linha 2</span>
+          </div>
+          <div class="followContactBtnsWrapper">
+            <button>
+              <svg fill="#7b9ba6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M296 432h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zm-160 0h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8zM440 64H336l-33.6-44.8A48 48 0 0 0 264 0h-80a48 48 0 0 0-38.4 19.2L112 64H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h24v368a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V96h24a8 8 0 0 0 8-8V72a8 8 0 0 0-8-8zM171.2 38.4A16.1 16.1 0 0 1 184 32h80a16.1 16.1 0 0 1 12.8 6.4L296 64H152zM384 464a16 16 0 0 1-16 16H80a16 16 0 0 1-16-16V96h320zm-168-32h16a8 8 0 0 0 8-8V152a8 8 0 0 0-8-8h-16a8 8 0 0 0-8 8v272a8 8 0 0 0 8 8z"/>
+              </svg>
+            </button>
+            <button>
+              <svg fill="#8e9aaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="13" heigth="13">
+                <path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm16 400c0 8.822-7.178 16-16 16H48c-8.822 0-16-7.178-16-16V80c0-8.822 7.178-16 16-16h352c8.822 0 16 7.178 16 16v352zM99.515 374.828c-4.686-4.686-4.686-12.284 0-16.971l195.15-195.15-.707-.707-89.958.342c-6.627 0-12-5.373-12-12v-9.999c0-6.628 5.372-12 12-12L340 128c6.627 0 12 5.372 12 12l-.343 136c0 6.627-5.373 12-12 12h-9.999c-6.627 0-12-5.373-12-12l.342-89.958-.707-.707-195.15 195.15c-4.686 4.686-12.284 4.686-16.971 0l-5.657-5.657z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <!-- FINAL blocos de status do follow BLOCO 5 positivo ##################################################################################-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- follow express modal @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+<div class="followModalContainer">
+  <span class="clientNameTag">Nome do cliente</span>
+  <div class="followExpressModalWrapper">
+    <button id="close-btn1">
+      <svg fill="#26547c" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.1 12.1" xml:space="preserve" width="15" height="15">
+        <path fill="#8E9AAF" d="M7.3,6l3.9-3.9L12,1.4c0.1-0.1,0.1-0.3,0-0.4l-0.9-0.9C11,0,10.8,0,10.7,0.1L6,4.8L1.4,0.1C1.3,0,1.1,0,0.9,0.1L0.1,0.9C0,1.1,0,1.3,0.1,1.4L4.8,6l-4.7,4.7C0,10.8,0,11,0.1,11.1L0.9,12c0.1,0.1,0.3,0.1,0.4,0L6,7.3l3.9,3.9l0.8,0.8c0.1,0.1,0.3,0.1,0.4,0l0.9-0.9c0.1-0.1,0.1-0.3,0-0.4L7.3,6z"></path>
+      </svg>
+    </button>
+    <div class="followExpressHeaderWrapper">
+      <span>Criar Follow-up</span>
+      <div class="input-cliente">
+        <div class="icone-input-cliente">
+          <svg id="icone-cliente" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 25.2 27" xml:space="preserve">
+            <path fill="#EEE2DF" d="M11,12.5c3.5,0,6.3-2.8,6.3-6.3S14.4,0,11,0S4.7,2.8,4.7,6.3S7.5,12.5,11,12.5z M11,1.6c2.6,0,4.7,2.1,4.7,4.7S13.5,11,11,11S6.3,8.8,6.3,6.3S8.4,1.6,11,1.6z M2.3,23.5c-0.4,0-0.8-0.4-0.8-0.8v-2c0-2.8,2.2-5,5-5c1,0,1.9,0.8,4.4,0.8c2.5,0,3.4-0.8,4.4-0.8c0.1,0,0.3,0,0.4,0c0.1-0.6,0.3-1.1,0.6-1.5c-0.3-0.1-0.7-0.1-1-0.1c-1.4,0-2.1,0.8-4.4,0.8s-3-0.8-4.4-0.8C2.9,14.1,0,17,0,20.7v2C0,24,1.1,25,2.3,25h14.1c-0.3-0.5-0.6-1-0.7-1.6H2.3z M23.6,22.2c0-0.5-0.2-0.9-0.5-1.3c-0.4-0.3-1-0.7-1.8-0.9c-1.2-0.4-2-0.8-2.6-1.4c-0.5-0.6-0.8-1.3-0.8-2.2c0-0.9,0.3-1.6,0.8-2.2c0.5-0.6,1.2-0.9,2.2-1v-1.8h1.2v1.8c0.9,0.1,1.6,0.5,2.2,1.2c0.5,0.7,0.8,1.5,0.8,2.7h-1.5c0-0.8-0.2-1.4-0.6-1.9c-0.4-0.5-0.9-0.7-1.5-0.7c-0.7,0-1.2,0.2-1.5,0.5c-0.3,0.3-0.5,0.8-0.5,1.4c0,0.6,0.2,1,0.5,1.3c0.4,0.3,1,0.6,1.8,0.9c0.8,0.3,1.5,0.6,2,0.9c0.5,0.3,0.8,0.7,1,1.1c0.2,0.4,0.3,0.9,0.3,1.5c0,0.9-0.3,1.7-0.8,2.2c-0.6,0.6-1.3,0.9-2.4,1V27h-1.2v-1.6c-1-0.1-1.8-0.5-2.4-1.1c-0.6-0.6-0.9-1.5-0.9-2.6H19c0,0.8,0.2,1.4,0.6,1.8c0.4,0.4,1,0.6,1.7,0.6c0.7,0,1.3-0.2,1.7-0.5C23.4,23.3,23.6,22.8,23.6,22.2z"></path>
+          </svg>
+        </div>
+        <div class="ampstart-input">
+          <select name="name12" id="ip12" class="cliente-dropdown">
+            <option value="">Selecione o Cliente</option>
+            <option value="">Nome Cliente 1</option>
+            <option value="">Nome Cliente 2</option>
+            <option value="">Nome Cliente 3</option>
+          </select>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+<!-- prazo tag -->
+<div class="tasklineItem LineTerm">
+    <div class="prazo-svg">
+      <svg id="icon-data" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14.9 18" xml:space="preserve">
+        <path fill="#EEE2DF" d="M13.3,2.3h-1.6V0.4c0-0.2-0.2-0.4-0.4-0.4H11c-0.2,0-0.4,0.2-0.4,0.4v1.8H4.3V0.4C4.3,0.2,4.1,0,3.9,0H3.6C3.4,0,3.2,0.2,3.2,0.4v1.8H1.6C0.7,2.3,0,3,0,3.9v12.4C0,17.2,0.7,18,1.6,18h11.7c0.9,0,1.6-0.8,1.6-1.7V3.9C14.9,3,14.2,2.3,13.3,2.3z M1.6,3.4h11.7c0.3,0,0.5,0.3,0.5,0.6v1.7H1.1V3.9C1.1,3.6,1.3,3.4,1.6,3.4z M13.3,16.9H1.6c-0.3,0-0.5-0.3-0.5-0.6V6.8h12.8v9.6C13.8,16.6,13.6,16.9,13.3,16.9z M11.1,10l-4.5,4.7c-0.2,0.2-0.4,0.2-0.6,0l-2.2-2.4c-0.2-0.2-0.2-0.4,0-0.6l0.3-0.3c0.2-0.2,0.4-0.2,0.6,0l1.7,1.8l3.9-4.1c0.2-0.2,0.4-0.2,0.6,0l0.3,0.3C11.2,9.6,11.2,9.9,11.1,10L11.1,10z"></path>
+      </svg>
+    </div>
+    <h3 id="TermTitle" class="Color1">Prazo</h3>
+    <h3 id="TermTitle">20 dias</h3>
+  <button class="lineTermDropDown">
+    <svg id="termDropDownIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" xml:space="preserve">
+      <path fill="#777" d="M6.5,10.9L0.2,4.4c-0.3-0.3-0.3-0.7,0-0.9l0.4-0.4c0.3-0.3,0.7-0.3,0.9,0L7,8.7l5.5-5.6c0.3-0.3,0.7-0.3,0.9,0l0.4,0.4c0.3,0.3,0.3,0.7,0,0.9l-6.4,6.5C7.2,11.2,6.8,11.2,6.5,10.9z"></path>
+    </svg>
+  </button>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- date picker dropdown -->
+<div id="myDIV" style="display: none;" class="progressDropdown">
+  <div class="date-picker">
+    <fieldset>
+        <div class="datas-header">
+          <div class="date-picker-icon">
+            <svg id="date-picker-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.5 20" xml:space="preserve">
+              <path fill="#EEE2DF" d="M15.6,2.5h-1.9v-2c0-0.3-0.2-0.5-0.5-0.5H13c-0.3,0-0.5,0.2-0.5,0.5v2H5v-2C5,0.2,4.8,0,4.5,0H4.2C4,0,3.8,0.2,3.8,0.5v2H1.9C0.8,2.5,0,3.3,0,4.4v13.8c0,1,0.8,1.9,1.9,1.9h13.8c1,0,1.9-0.8,1.9-1.9V4.4C17.5,3.3,16.7,2.5,15.6,2.5z M1.9,3.8h13.8c0.3,0,0.6,0.3,0.6,0.6v1.9h-15V4.4C1.3,4,1.5,3.8,1.9,3.8z M15.6,18.8H1.9c-0.3,0-0.6-0.3-0.6-0.6V7.5h15v10.6C16.3,18.5,16,18.8,15.6,18.8z M5.8,12.5H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6C3.8,10.2,4,10,4.2,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C6.3,12.3,6,12.5,5.8,12.5z M9.5,12.5H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6C7.5,10.2,7.7,10,8,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C10,12.3,9.8,12.5,9.5,12.5z M13.3,12.5h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5V12C13.8,12.3,13.5,12.5,13.3,12.5z M9.5,16.3H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C10,16,9.8,16.3,9.5,16.3z M5.8,16.3H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C6.3,16,6,16.3,5.8,16.3z M13.3,16.3h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C13.8,16,13.5,16.3,13.3,16.3z"></path>
+            </svg>
+          </div>
+          <h3>Data inicial</h3>
+        </div>
+        <div class="data-inicial">
+            <input type="date" id="start" name="trip" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+        </div>
+        <div class="datas-header">
+          <div class="date-picker-icon">
+            <svg id="date-picker-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 17.5 20" xml:space="preserve">
+              <path fill="#EEE2DF" d="M15.6,2.5h-1.9v-2c0-0.3-0.2-0.5-0.5-0.5H13c-0.3,0-0.5,0.2-0.5,0.5v2H5v-2C5,0.2,4.8,0,4.5,0H4.2C4,0,3.8,0.2,3.8,0.5v2H1.9C0.8,2.5,0,3.3,0,4.4v13.8c0,1,0.8,1.9,1.9,1.9h13.8c1,0,1.9-0.8,1.9-1.9V4.4C17.5,3.3,16.7,2.5,15.6,2.5z M1.9,3.8h13.8c0.3,0,0.6,0.3,0.6,0.6v1.9h-15V4.4C1.3,4,1.5,3.8,1.9,3.8z M15.6,18.8H1.9c-0.3,0-0.6-0.3-0.6-0.6V7.5h15v10.6C16.3,18.5,16,18.8,15.6,18.8z M5.8,12.5H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6C3.8,10.2,4,10,4.2,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C6.3,12.3,6,12.5,5.8,12.5z M9.5,12.5H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6C7.5,10.2,7.7,10,8,10h1.6c0.3,0,0.5,0.2,0.5,0.5V12C10,12.3,9.8,12.5,9.5,12.5z M13.3,12.5h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5V12C13.8,12.3,13.5,12.5,13.3,12.5z M9.5,16.3H8c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C10,16,9.8,16.3,9.5,16.3z M5.8,16.3H4.2c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C6.3,16,6,16.3,5.8,16.3z M13.3,16.3h-1.6c-0.3,0-0.5-0.2-0.5-0.5v-1.6c0-0.3,0.2-0.5,0.5-0.5h1.6c0.3,0,0.5,0.2,0.5,0.5v1.6C13.8,16,13.5,16.3,13.3,16.3z"></path>
+            </svg>
+          </div>
+          <h3>Data Final</h3>
+        </div>
+        <div class="data-final">
+            <input type="date" id="end" name="trip" value="2018-07-29" min="2018-01-01" max="2018-12-31">
+        </div>
+    </fieldset>
+    </div>
+</div>
+<!-- final date picker dropdown -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- final prazo tag -->
+    </div>
+        <div class="followFormWrapper">
+          <input type="text" placeholder="Nome do Follow-up">
+          <textarea rows="4" cols="50" placeholder="Escrever algo..."></textarea>
+        </div>
+        <div class="followProjetoWrapper">
+          <div class="input-projeto">
+            <div class="icone-input-projeto">
+            <svg fill="#eee2df" id="icone-projeto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path d="M112 432h32c17.7 0 32-14.4 32-32v-32c0-17.6-14.3-32-32-32h-32c-17.7 0-32 14.4-32 32v32c0 17.6 14.3 32 32 32zm0-64h32v32h-32v-32zm0-192h32c17.7 0 32-14.4 32-32v-32c0-17.6-14.3-32-32-32h-32c-17.7 0-32 14.4-32 32v32c0 17.6 14.3 32 32 32zm0-64h32v32h-32v-32zM416 0H32C14.3 0 0 14.4 0 32v448c0 17.6 14.3 32 32 32h384c17.7 0 32-14.4 32-32V32c0-17.6-14.3-32-32-32zm0 480H32V32h384v448zM216 144h128c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H216c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0 128h128c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H216c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0 128h128c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H216c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm-97.4-113.6c2.1 2.1 5.5 2.1 7.6 0l64.2-63.6c2.1-2.1 2.1-5.5 0-7.6l-12.6-12.7c-2.1-2.1-5.5-2.1-7.6 0l-47.6 47.2-20.6-20.9c-2.1-2.1-5.5-2.1-7.6 0l-12.7 12.6c-2.1 2.1-2.1 5.5 0 7.6l36.9 37.4z"/>
+            </svg>
+            </div>
+            <div class="ampstart-input">
+              <select name="name12" id="ip12" class="projeto-dropdown">
+                <option value="">Selecione o Projeto Existente</option>
+                <option value="">Nome projeto 1</option>
+                <option value="">Nome projeto 2</option>
+                <option value="">Nome projeto 3</option>
+              </select>
+            </div>
+          </div>
+          <span class="nomeProjetoText"> Ou crie um projeto novo:</span>
+          <svg fill="#eee2df" id="icone-novo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="30" height="30">
+            <path d="M560.83 135.96l-24.79-24.79c-20.23-20.24-53-20.26-73.26 0L384 189.72v-57.75c0-12.7-5.1-25-14.1-33.99L286.02 14.1c-9-9-21.2-14.1-33.89-14.1H47.99C21.5.1 0 21.6 0 48.09v415.92C0 490.5 21.5 512 47.99 512h288.02c26.49 0 47.99-21.5 47.99-47.99v-80.54c6.29-4.68 12.62-9.35 18.18-14.95l158.64-159.3c9.79-9.78 15.17-22.79 15.17-36.63s-5.38-26.84-15.16-36.63zM256.03 32.59c2.8.7 5.3 2.1 7.4 4.2l83.88 83.88c2.1 2.1 3.5 4.6 4.2 7.4h-95.48V32.59zm95.98 431.42c0 8.8-7.2 16-16 16H47.99c-8.8 0-16-7.2-16-16V48.09c0-8.8 7.2-16.09 16-16.09h176.04v104.07c0 13.3 10.7 23.93 24 23.93h103.98v61.53l-48.51 48.24c-30.14 29.96-47.42 71.51-47.47 114-3.93-.29-7.47-2.42-9.36-6.27-11.97-23.86-46.25-30.34-66-14.17l-13.88-41.62c-3.28-9.81-12.44-16.41-22.78-16.41s-19.5 6.59-22.78 16.41L103 376.36c-1.5 4.58-5.78 7.64-10.59 7.64H80c-8.84 0-16 7.16-16 16s7.16 16 16 16h12.41c18.62 0 35.09-11.88 40.97-29.53L144 354.58l16.81 50.48c4.54 13.51 23.14 14.83 29.5 2.08l7.66-15.33c4.01-8.07 15.8-8.59 20.22.34C225.44 406.61 239.9 415.7 256 416h32c22.05-.01 43.95-4.9 64.01-13.6v61.61zm27.48-118.05A129.012 129.012 0 0 1 288 384v-.03c0-34.35 13.7-67.29 38.06-91.51l120.55-119.87 52.8 52.8-119.92 120.57zM538.2 186.6l-21.19 21.19-52.8-52.8 21.2-21.19c7.73-7.73 20.27-7.74 28.01 0l24.79 24.79c7.72 7.73 7.72 20.27-.01 28.01z"/>
+          </svg>
+          <input type="text" class="nomeProjetoInput" placeholder="Nome de projeto novo">
+        </div>
+<button class="criar-btn">Criar</button>
+  </div>
+</div>
+<!-- final follow express modal @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- FINAL FULL CONTAINER -->
+
+
+
+
+
+<script src="js/follow.js"></script>
+  </body>
+</html>
